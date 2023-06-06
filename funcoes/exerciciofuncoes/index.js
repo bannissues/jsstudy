@@ -1,38 +1,80 @@
-let option
-let base
-let altura
-let lado
-let area
+function calcularAreaTriangulo() {
+  const base = parseFloat(prompt("Informe a base do triângulo:"))
+  const altura = parseFloat(prompt("Informe a altura do triângulo:"))
+  return base * altura / 2
+}
 
-do {
-  let option = prompt("olá! gostaria de fazer qual cálculo?\n" +
-                      "\n1 - área do triangulo" +
-                      "\n2 - área do retângulo" +
-                      "\n3 - área do quadrado" +
-                      "\n4 - área do trapézio" +
-                      "\n5 - área do círculo" +
-                      "\n6 - sair.")
+function calcularAreaRetangulo() {
+  const base = parseFloat(prompt("Informe a base do retângulo:"))
+  const altura = parseFloat(prompt("Informe a altura do retângulo:"))
+  return base * altura
+}
 
-switch (option) {
-  case 1:
-    base = prompt("qual o tamanho da base do triângulo?")
-    altura = prompt("qual a altura do triângulo?")
+function calcularAreaQuadrado() {
+  const lado = parseFloat(prompt("Informe a área do quadrado:"))
+  return lado * lado
+}
 
-    function triang() {
-    area = (base * altura) / 2
+function calcularAreaTrapezio() {
+  const baseMenor = parseFloat(prompt("Informe a base menor do trapézio:"))
+  const baseMaior = parseFloat(prompt("Informe a base maior do trapézio:"))
+  const altura = parseFloat(prompt("Informe a altura do trapézio:"))
+  return (baseMaior + baseMenor) * altura / 2
+}
+
+function calcularAreaCirculo() {
+  const raio = parseFloat(prompt("Informe o raio do círculo:"))
+  return (3.14 * raio * raio)
+}
+
+function exibirMenu() {
+  return prompt(
+    "Calculadora Geométrica\n" +
+    "1. Calcular área de triângulo\n" +
+    "2. Calcular área de retângulo\n" +
+    "3. Calcular área de quadrado\n" +
+    "4. Calcular área de trapézio\n" +
+    "5. Calcular área de círculo\n" +
+    "6. Sair\n"
+  )
+}
+
+function executar() {
+  let opcao = ""
+
+  do {
+    opcao = exibirMenu()
+    let resultado
+
+    switch (opcao) {
+      case "1":
+        resultado = calcularAreaTriangulo()
+        break
+      case "2":
+        resultado = calcularAreaRetangulo()
+        break
+      case "3":
+        resultado = calcularAreaQuadrado()
+        break
+      case "4":
+        resultado = calcularAreaTrapezio()
+        break
+      case "5":
+        resultado = calcularAreaCirculo()
+        break
+      case "6":
+        alert("Saindo...")
+        break
+      default:
+        alert("Opção inválida!")
+        break
     }
 
-    triang()
+    if (resultado) {
+      alert("Resultado: " + resultado)
+    }
 
-    window.alert("o valor da área do triângulo é de " + area )
-    break
-    
-  case 2: 
-    base = prompt("qual o tamanho da base do retângulo?")
-    altura = prompt("qual a altura do retângulo?")
-
-    triang()*2
-
-    window.alert("o valor da área do retângulo é de " + area)
+  } while (opcao !== "6");
 }
-} while (option = 6)
+
+executar()
