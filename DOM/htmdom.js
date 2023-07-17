@@ -13,6 +13,9 @@ function show() {
 
     const contact1 = document.getElementsByName('contato1')
     console.log('contact1')
+    
+    const firstContact = document.querySelector('#contact-list > li > label')
+    console.log(firstContact)  //query selector mostra o primeiro elemento a bater com os paramentros apresentados.
 }
 
 

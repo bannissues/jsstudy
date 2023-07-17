@@ -4,3 +4,6 @@ function onMouseEnter() {
 function onClick() {
     console.log('mouse clicked')
 }
+function onFocus() {
+    console.log('focou aqui')
+}
