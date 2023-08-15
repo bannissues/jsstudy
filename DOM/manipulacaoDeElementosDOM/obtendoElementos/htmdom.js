@@ -9,7 +9,7 @@ function show() {
     console.log(contactInputs)
 
     const contacts = document.querySelectorAll('#contact-list > li > label')
-    console.log(contacts) //query selector retorna uma node list
+    console.log(contacts) //o querySelectorAll te permite filtrar um nivel espcifico do que você quer.
 
     const contact1 = document.getElementsByName('contato1')
     console.log('contact1')

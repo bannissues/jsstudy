@@ -1,9 +1,10 @@
 function addInput() {
-    const ul = document.getElementById('inputs')
+    const ul = document.getElementById('ul')
 
     const newLi = document.createElement('li')
-    newLi.className = 'list-item'
-    newLi.innerText = 'new imput: '
+    newLi.className = 'li'
+    newLi.innerText = 'novo input: '
+
 
     const newInput = document.createElement('input')
     newInput.type = 'text'
@@ -11,4 +12,4 @@ function addInput() {
 
     newLi.appendChild(newInput)
     ul.appendChild(newLi)
-} //append child serve para introduzir um elemento dentro do outro
+}

@@ -29,3 +29,4 @@ function addPlayer() {
       document.getElementById("numberToRemove").value = ""
     }
   }
+  
